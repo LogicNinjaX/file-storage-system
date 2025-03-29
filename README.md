@@ -94,7 +94,7 @@ The project includes the following dependencies in `pom.xml`:
 
 1. Clone the repository:
    ```sh
-   git clone https://github.com/your-repo/file-storage-system.git
+   git clone https://github.com/LogicNinjaX/file-storage-system.git
    cd file-storage-system
    ```
 
