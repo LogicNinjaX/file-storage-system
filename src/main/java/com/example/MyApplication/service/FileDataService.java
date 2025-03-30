@@ -6,25 +6,17 @@ import com.example.MyApplication.dto.FileDataDto;
 import com.example.MyApplication.entity.FileData;
 import com.example.MyApplication.entity.UserProfile;
 import com.example.MyApplication.exception.FileNotFoundException;
-import com.example.MyApplication.exception.UserNotFoundException;
 import com.example.MyApplication.repository.FileDataRepository;
 import com.example.MyApplication.repository.UserProfileRepository;
-import com.example.MyApplication.security.JwtUtil;
-import jakarta.persistence.EntityManagerFactory;
 import jakarta.transaction.Transactional;
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
 import org.modelmapper.ModelMapper;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
-import java.io.File;
 import java.io.IOException;
-import java.nio.file.Files;
 import java.util.List;
 
 

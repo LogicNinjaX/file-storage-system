@@ -1,4 +1,4 @@
-package com.example.MyApplication.dto;
+package com.example.MyApplication.exception;
 
 public class FolderCreationFailedException extends RuntimeException{
 
