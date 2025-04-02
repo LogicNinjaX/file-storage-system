@@ -67,7 +67,7 @@ public class S3Service {
                     .build();
 
             s3Client.putObject(putObjectRequest, software.amazon.awssdk.core.sync.RequestBody.fromBytes(file.getBytes()));
-            logger.info("file uploaded by user: username");
+            logger.info("file uploaded by user: {}",username);
 
             return "File uploaded to folder '" + username + "' successfully: " + fileName;
         }catch (RuntimeException e){
