@@ -10,6 +10,8 @@ import com.example.MyApplication.repository.FileDataRepository;
 import com.example.MyApplication.repository.UserProfileRepository;
 import jakarta.transaction.Transactional;
 import org.modelmapper.ModelMapper;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
@@ -22,6 +24,8 @@ import java.util.List;
 
 @Service
 public class FileDataService {
+
+    private Logger logger  = LoggerFactory.getLogger(FileDataService.class);
 
     private final FileDataRepository fileDataRepository;
     private final ModelMapper modelMapper;
@@ -48,6 +52,8 @@ public class FileDataService {
 
         FileDataDto fileDataDto = modelMapper.map(fileDataRepository.save(fileData), FileDataDto.class); // converting entity to dto
 
+        logger.info("file info saved in db");
+
         return new ApiResponse(true, response, fileDataDto);
     }
 
@@ -61,6 +67,8 @@ public class FileDataService {
 
         String result = s3Service.deleteFileFromFolder(userProfile.getUsername(), fileData.getName());
         fileDataRepository.delete(fileData);
+
+        logger.info("file info deleted in db");
 
         return result;
     }
